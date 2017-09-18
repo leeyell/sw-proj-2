@@ -45,9 +45,12 @@ def doScoreDB(scdb):
                 print("add 이름 나이 점수 순으로 입력해주세요.")
         elif parse[0] == 'del':
             try:
+                del_list = []
                 for p in scdb:                   #왜 지워도 꼭 하나가 안 지워지고 남지?????? 코드 리뷰를 위해 남겨놓도록 하자..
                     if p['Name'] == parse[1]:
-                        scdb.remove(p)
+                        del_list.append(p)
+                for pp in del_list:
+                    scdb.remove(pp)
             except:
                 print("del 이름 순으로 입력해주세요.")
         elif parse[0] == 'show':
